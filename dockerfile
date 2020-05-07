@@ -16,7 +16,7 @@ RUN cd ~ && mkdir -p /home/node/app/node_modules && chown -R node:node /home/nod
 
 WORKDIR /home/node/app
 
-RUN git clone https://github.com/thecurrentuser/Maratona-Full-Cycle-2.0.git
+RUN git clone -b desafio-02 https://github.com/thecurrentuser/Maratona-Full-Cycle-2.0.git
 
 RUN echo "Copiando os fontes e removendo arquivos desnecessários"
 RUN mv Maratona-Full-Cycle-2.0/* .
