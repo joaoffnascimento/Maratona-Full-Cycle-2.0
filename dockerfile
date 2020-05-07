@@ -8,6 +8,14 @@ RUN apk add --no-cache git
 
 RUN apk add --no-cache bash
 
+RUN apk add --update-cache \
+    python \
+    python-dev \
+    py-pip \
+    build-base \
+  && pip install virtualenv \
+  && rm -rf /var/cache/apk/*
+
 RUN touch /root/.bashrc | echo "PS1='\w\$ '" >> /root/.bashrc
 
 RUN npm i -g @nestjs/cli@6.14.2
